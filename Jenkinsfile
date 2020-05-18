@@ -25,7 +25,7 @@ pipeline {
         }
         stage("Remove latest image from local machine)") {
             steps {
-                    sh "docker rmi sergiubahrim/selenium-docker latest"
+                    sh "docker rmi sergiubahrim/selenium-docker:latest"
             }
         }
         stage("Pull latest image from DockerHub)") {
