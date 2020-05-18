@@ -30,12 +30,12 @@ pipeline {
 //        }
         stage("Raise the grid (hub + nodes)") {
              steps {
-                    sh "docker-compose up -d hub chrome firefox --no-color"
+                    sh "docker-compose up --no-color -d hub chrome firefox"
                 }
         }
         stage("Run the tests") {
              steps {
-                    sh "docker-compose up search-module-chrome coface-test-module-firefox --no-color"
+                    sh "docker-compose up --no-color search-module-chrome coface-test-module-firefox"
              }
         }
     }
