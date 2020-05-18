@@ -14,20 +14,20 @@ pipeline {
                 sh "docker build -t='sergiubahrim/selenium-docker' ."
             }
         }
-        stage('Push Image') {
-            steps {
-			    withCredentials([usernamePassword(credentialsId: 'DockerHub', passwordVariable: 'pass', usernameVariable: 'user')]) {
-
-			        sh "docker login --username=${user} --password=${pass}"
-			        sh "docker push sergiubahrim/selenium-docker:latest"
-			    }
-            }
-        }
-        stage("Pull latest image from DockerHub)") {
-            steps {
-                    sh "docker pull sergiubahrim/selenium-docker"
-            }
-        }
+//       stage('Push Image') {
+//           steps {
+//			    withCredentials([usernamePassword(credentialsId: 'DockerHub', passwordVariable: 'pass', usernameVariable: 'user')]) {
+//
+//			        sh "docker login --username=${user} --password=${pass}"
+//			        sh "docker push sergiubahrim/selenium-docker:latest"
+//			    }
+//           }
+//        }
+//        stage("Pull latest image from DockerHub)") {
+//            steps {
+//                    sh "docker pull sergiubahrim/selenium-docker"
+//            }
+//        }
         stage("Raise the grid (hub + nodes)") {
              steps {
                     sh "docker-compose up -d hub chrome firefox"
@@ -42,8 +42,11 @@ pipeline {
 
     post{
             always{
+                //create logs folder for Jenkins
                 archiveArtifacts artifacts: 'output/**'
+                //shut down the selenium grid
                 sh "docker-compose down"
+                //remove the docker image from local machine
                 sh "docker rmi sergiubahrim/selenium-docker:latest"
             }
         }
