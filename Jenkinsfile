@@ -11,7 +11,7 @@ pipeline {
         stage('Build Image') {
             steps {
 
-                sh "docker build -t='sergiubahrim/selenium-docker' ."
+                sh "docker build -t='sergiubahrim/selenium-docker'."
             }
         }
 //       stage('Push Image') {
@@ -30,12 +30,12 @@ pipeline {
 //        }
         stage("Raise the grid (hub + nodes)") {
              steps {
-                    sh "docker-compose up -d hub chrome firefox"
+                    sh "docker-compose up -d hub chrome firefox --no-color"
                 }
         }
         stage("Run the tests") {
              steps {
-                    sh "docker-compose up search-module-chrome coface-test-module-firefox"
+                    sh "docker-compose up search-module-chrome coface-test-module-firefox --no-color"
              }
         }
     }
