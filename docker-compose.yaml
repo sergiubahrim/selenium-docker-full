@@ -1,0 +1,68 @@
+version: "3"
+services: 
+  hub:
+    image: selenium/hub:latest
+    ports:
+      - "4444:4444"
+  chrome:
+    image: selenium/node-chrome-debug:3.141.59-xenon
+    shm_size: '1gb'
+    ports:
+      - 5900
+    depends_on:
+      - hub
+    environment:
+      - HUB_HOST=hub
+  firefox:
+    ports:
+      - 5900
+    image: selenium/node-firefox-debug:3.141.59-xenon
+    shm_size: '1gb'
+    depends_on:
+      - hub
+    environment:
+      - HUB_HOST=hub
+  search-module-chrome:
+    image: sergiubahrim/selenium-docker
+    depends_on:
+      - chrome
+      - firefox
+    environment:
+      - BROWSER=chrome
+      - HUB_HOST=hub
+      - MODULE=search-demo.xml
+    volumes:
+      - ./output/search-result-chrome:/Users/sergiu.bahrim/seleniumGrid/test-output
+  search-module-firefox:
+    image: sergiubahrim/selenium-docker
+    depends_on:
+      - chrome
+      - firefox
+    environment:
+      - BROWSER=firefox
+      - HUB_HOST=hub
+      - MODULE=search-demo.xml
+    volumes:
+      - ./output/search-result-firefox:/Users/sergiu.bahrim/seleniumGrid/test-output
+  coface-test-module-chrome:
+    image: sergiubahrim/selenium-docker
+    depends_on:
+      - chrome
+      - firefox
+    environment:
+      - HUB_HOST=hub
+      - BROWSER=chrome
+      - MODULE=coface_tests.xml 
+    volumes:
+      - ./output/coface-result-chrome:/Users/sergiu.bahrim/seleniumGrid/test-output
+  coface-test-module-firefox:
+    image: sergiubahrim/selenium-docker
+    depends_on:
+      - chrome
+      - firefox
+    environment:
+      - HUB_HOST=hub
+      - BROWSER=firefox
+      - MODULE=coface_tests.xml 
+    volumes:
+      - ./output/coface-result-firefox:/Users/sergiu.bahrim/seleniumGrid/test-output
