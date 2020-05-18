@@ -38,6 +38,11 @@ pipeline {
                     sh "docker-compose up search-module-chrome coface-test-module-firefox"
              }
         }
+        stage("Remove the docker image from local machine") {
+             steps {
+                    sh "docker rmi sergiubahrim/selenium-docker:latest"
+             }
+        }
     }
 
     post{
