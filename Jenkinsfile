@@ -44,8 +44,10 @@ pipeline {
             always{
                 //create logs folder for Jenkins
                 archiveArtifacts artifacts: 'output/**'
+
                 //shut down the selenium grid
                 sh "docker-compose down"
+
                 //remove the docker image from local machine
                 sh "docker rmi sergiubahrim/selenium-docker:latest"
             }
