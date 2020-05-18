@@ -19,7 +19,7 @@
     </test>
 
     <test name = "search-webdriver">
-        <parameter name="keyword" value="webdriver"/>
+        <parameter name="keyword" value="jenkins"/>
         <classes>
             <class name ="demoTests.Searchducktest">
             </class>
