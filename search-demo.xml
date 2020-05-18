@@ -2,13 +2,13 @@
 
 <suite name = "Search Demo" parallel="none">
 
-   <!-- <test name = "search-java">
+<!--    <test name = "search-java">
         <parameter name="keyword" value="java"/>
         <classes>
             <class name ="demoTests.Searchducktest">
             </class>
         </classes>
-    </test>-->
+    </test>
 
     <test name = "search-selenium">
         <parameter name="keyword" value="selenium"/>
@@ -24,7 +24,7 @@
             <class name ="demoTests.Searchducktest">
             </class>
         </classes>
-    </test>
+    </test>-->
 
     <test name = "search-docker">
         <parameter name="keyword" value="docker"/>
