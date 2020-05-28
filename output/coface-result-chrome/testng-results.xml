@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Coface Tests" duration-ms="52822" started-at="2020-05-26T07:06:32Z" finished-at="2020-05-26T07:07:24Z">
+    <groups>
+    </groups>
+    <test name="Add One Time Check service" duration-ms="52822" started-at="2020-05-26T07:06:32Z" finished-at="2020-05-26T07:07:24Z">
+      <class name="tests.CofaceTests">
+        <test-method status="PASS" signature="before()[pri:0, instance:tests.CofaceTests@6ad5c04e]" name="before" is-config="true" duration-ms="12497" started-at="2020-05-26T07:06:32Z" finished-at="2020-05-26T07:06:44Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- before -->
+        <test-method status="PASS" signature="cofaceAddScoringInquiry()[pri:0, instance:tests.CofaceTests@6ad5c04e]" name="cofaceAddScoringInquiry" duration-ms="40124" started-at="2020-05-26T07:06:44Z" finished-at="2020-05-26T07:07:24Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- cofaceAddScoringInquiry -->
+        <test-method status="PASS" signature="quit()[pri:0, instance:tests.CofaceTests@6ad5c04e]" name="quit" is-config="true" duration-ms="123" started-at="2020-05-26T07:07:24Z" finished-at="2020-05-26T07:07:24Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quit -->
+      </class> <!-- tests.CofaceTests -->
+    </test> <!-- Add One Time Check service -->
+  </suite> <!-- Coface Tests -->
+</testng-results>

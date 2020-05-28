@@ -66,3 +66,25 @@ services:
       - MODULE=coface_tests.xml 
     volumes:
       - ./output/coface-result-firefox:/Users/sergiu.bahrim/seleniumGrid/test-output
+  apidocuments-chrome:
+    image: sergiubahrim/selenium-docker
+    depends_on:
+      - chrome
+      - firefox
+    environment:
+      - HUB_HOST=hub
+      - BROWSER=chrome
+      - MODULE=tsdocuments.xml
+    volumes:
+      - ./output/apidocuments-result-chrome:/Users/sergiu.bahrim/seleniumGrid/test-output
+  apidocuments-firefox:
+    image: sergiubahrim/selenium-docker
+    depends_on:
+      - chrome
+      - firefox
+    environment:
+      - HUB_HOST=hub
+      - BROWSER=firefox
+      - MODULE=tsdocuments.xml
+    volumes:
+      - ./output/apidocuments-result-firefox:/Users/sergiu.bahrim/seleniumGrid/test-output

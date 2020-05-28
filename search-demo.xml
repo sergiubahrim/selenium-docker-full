@@ -1,8 +1,8 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
-<suite name = "Search Demo" parallel="none">
+<suite name = "Search Demo" parallel="tests">
 
-<!--    <test name = "search-java">
+   <!-- <test name = "search-java">
         <parameter name="keyword" value="java"/>
         <classes>
             <class name ="demoTests.Searchducktest">
@@ -16,7 +16,7 @@
             <class name ="demoTests.Searchducktest">
             </class>
         </classes>
-    </test>
+    </test>-->
 
     <test name = "search-jenkins">
         <parameter name="keyword" value="jenkins"/>
@@ -24,7 +24,7 @@
             <class name ="demoTests.Searchducktest">
             </class>
         </classes>
-    </test>-->
+    </test>
 
     <test name = "search-docker">
         <parameter name="keyword" value="docker"/>

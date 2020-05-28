@@ -1,3 +1,5 @@
-tests/CofaceTests.class
+demoTests/xmlreader.class
 tests/BaseTest.class
 demoTests/Searchducktest.class
+demoTests/getDocuments.class
+tests/CofaceTests.class
