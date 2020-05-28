@@ -16,6 +16,7 @@ ADD target/libs                             libs
 # ADD suites files
 ADD search-demo.xml                         search-demo.xml
 ADD coface_tests.xml                        coface_tests.xml
+ADD tsdocuments.xml                         tsdocuments.xml
 
 #ADD healthcheck script
 ADD healthcheck.sh                          healthcheck.sh
