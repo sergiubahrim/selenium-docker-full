@@ -35,7 +35,7 @@ public class TradeshiftDocumentsAutomation extends xmlreader {
 
     @Test
     public void sendInvoice() throws URISyntaxException {
-        File myRequest = new File(new URI("file:///Users/sergiu.bahrim/IdeaProjects/seleniumdockerComplete/src/main/resources/TestData"));
+        File myRequest = new File(new URI("file:///Users/sergiu.bahrim/IdeaProjects/seleniumdockerComplete/src/main/resources/TestData.xml"));
 
 
         Response response = RestAssured
