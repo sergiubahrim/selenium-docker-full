@@ -4,6 +4,10 @@ import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import org.testng.annotations.Test;
 
+import java.io.File;
+import java.net.URI;
+import java.net.URISyntaxException;
+
 public class TradeshiftDocumentsAutomation extends xmlreader {
 
 
@@ -30,7 +34,9 @@ public class TradeshiftDocumentsAutomation extends xmlreader {
     }
 
     @Test
-    public void sendInvoice() {
+    public void sendInvoice() throws URISyntaxException {
+        File myRequest = new File(new URI("file:///Users/sergiu.bahrim/IdeaProjects/seleniumdockerComplete/src/main/resources/TestData"));
+
 
         Response response = RestAssured
      //GIVEN
