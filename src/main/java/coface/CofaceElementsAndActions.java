@@ -151,7 +151,7 @@ public class CofaceElementsAndActions {
 
     }
 
-    public void AddInquiry() throws InterruptedException {
+    public void AddInquiry() {
         inquirySearch(driver, searchWord);
         waitAndClick(driver, clickScoringInquiry);
         driver.findElement(city).sendKeys("TESTCITY2");
