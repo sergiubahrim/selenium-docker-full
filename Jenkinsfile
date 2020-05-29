@@ -14,7 +14,7 @@ pipeline {
                 sh "docker build -t='sergiubahrim/selenium-docker' ."
             }
         }
- <!--      stage('Push Image') {
+/*     stage('Push Image') {
            steps {
 			    withCredentials([usernamePassword(credentialsId: 'DockerHub', passwordVariable: 'pass', usernameVariable: 'user')]) {
 
@@ -27,7 +27,8 @@ pipeline {
             steps {
                     sh "docker pull sergiubahrim/selenium-docker"
             }
-        }-->
+        }
+*/
         stage("Raise the grid (hub + nodes)") {
              steps {
                     sh "docker-compose up --no-color -d hub chrome firefox"
