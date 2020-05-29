@@ -14,7 +14,8 @@ ADD target/libs                             libs
 # in case of any other dependencies like .csv / .json / .xls
 # please add this as well
 # ADD suites files
-ADD search-demo.xml                         search-demo.xml
+
+# ADD search-demo.xml                         search-demo.xml
 ADD coface_tests.xml                        coface_tests.xml
 ADD tsdocuments.xml                         tsdocuments.xml
 
