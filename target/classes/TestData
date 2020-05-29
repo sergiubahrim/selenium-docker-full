@@ -3,7 +3,7 @@
     <cbc:UBLVersionID>2.0</cbc:UBLVersionID>
     <cbc:CustomizationID>urn:tradeshift.com:ubl-2.0-customizations:2010-06</cbc:CustomizationID>
     <cbc:ProfileID schemeAgencyID="CEN/ISSS WS/BII" schemeID="CWA 16073:2010" schemeVersionID="1">urn:www.cenbii.eu:profile:bii04:ver1.0</cbc:ProfileID>
-    <cbc:ID>TEST22227</cbc:ID>
+    <cbc:ID>TEST22228</cbc:ID>
     <cbc:IssueDate>2020-04-29</cbc:IssueDate>
     <cbc:InvoiceTypeCode listAgencyID="6" listID="UN/ECE 1001 Subset" listVersionID="D08B">380</cbc:InvoiceTypeCode>
     <cbc:DocumentCurrencyCode>EUR</cbc:DocumentCurrencyCode>

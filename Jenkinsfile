@@ -14,20 +14,20 @@ pipeline {
                 sh "docker build -t='sergiubahrim/selenium-docker' ."
             }
         }
-//       stage('Push Image') {
-//           steps {
-//			    withCredentials([usernamePassword(credentialsId: 'DockerHub', passwordVariable: 'pass', usernameVariable: 'user')]) {
-//
-//			        sh "docker login --username=${user} --password=${pass}"
-//			        sh "docker push sergiubahrim/selenium-docker:latest"
-//			    }
-//           }
-//        }
-//        stage("Pull latest image from DockerHub)") {
-//            steps {
-//                    sh "docker pull sergiubahrim/selenium-docker"
-//            }
-//        }
+       stage('Push Image') {
+           steps {
+			    withCredentials([usernamePassword(credentialsId: 'DockerHub', passwordVariable: 'pass', usernameVariable: 'user')]) {
+
+			        sh "docker login --username=${user} --password=${pass}"
+			        sh "docker push sergiubahrim/selenium-docker:latest"
+			    }
+           }
+        }
+        stage("Pull latest image from DockerHub)") {
+            steps {
+                    sh "docker pull sergiubahrim/selenium-docker"
+            }
+        }
         stage("Raise the grid (hub + nodes)") {
              steps {
                     sh "docker-compose up --no-color -d hub chrome firefox"
@@ -35,7 +35,7 @@ pipeline {
         }
         stage("Run the tests") {
              steps {
-                    sh "docker-compose up --no-color search-module-chrome coface-test-module-firefox apidocuments-firefox"
+                    sh "docker-compose up --no-color coface-test-module-firefox apidocuments-chrome"
              }
         }
     }
