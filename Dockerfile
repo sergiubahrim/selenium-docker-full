@@ -15,7 +15,7 @@ ADD target/libs                             libs
 # please add this as well
 # ADD suites files
 
-# ADD search-demo.xml                         search-demo.xml
+ADD search-demo.xml                         search-demo.xml
 ADD coface_tests.xml                        coface_tests.xml
 ADD tsdocuments.xml                         tsdocuments.xml
 
