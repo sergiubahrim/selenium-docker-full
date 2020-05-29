@@ -1,12 +1,11 @@
 package demoTests;
 
+import com.google.common.base.Charsets;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import org.testng.annotations.Test;
 
-import java.io.File;
-import java.net.URI;
-import java.net.URISyntaxException;
+import java.io.IOException;
 
 public class TradeshiftDocumentsAutomation extends xmlreader {
 
@@ -34,10 +33,9 @@ public class TradeshiftDocumentsAutomation extends xmlreader {
     }
 
     @Test
-    public void sendInvoice() throws URISyntaxException {
-        File myRequest = new File(new URI("file:///Users/sergiu.bahrim/IdeaProjects/seleniumdockerComplete/src/main/resources/TestData.xml"));
+    public void sendInvoice() throws IOException {
 
-
+        String myRequest = this.readResource("TestData", Charsets.UTF_8);
         Response response = RestAssured
      //GIVEN
                 .given()
