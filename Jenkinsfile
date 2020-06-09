@@ -36,7 +36,7 @@ pipeline {
         }
         stage("Run the tests") {
              steps {
-                    sh "docker-compose up --no-color coface-test-module-firefox apidocuments-chrome"
+                    sh "docker-compose up --no-color coface-test-module-firefox apidocuments-chrome search-module-chrome"
              }
         }
     }
