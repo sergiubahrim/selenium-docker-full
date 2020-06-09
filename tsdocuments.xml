@@ -2,10 +2,10 @@
 
 <suite name = "TS API Tests" parallel="tests">
 
-    <test name = "getAllDocuments">
-        <classes>
-            <class name ="demoTests.TradeshiftDocumentsAutomation">
-            </class>
-        </classes>
-    </test>
+<test name = "getAllDocuments">
+    <classes>
+        <class name ="demoTests.TradeshiftDocumentsAutomation">
+        </class>
+    </classes>
+</test>
 </suite>
